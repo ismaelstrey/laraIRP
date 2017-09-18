@@ -1,4 +1,4 @@
-# laraIRP
+# laraERP
 IRP Grupo de estudos
 
 # IRP para fins didadtico Grupo de estudos Laravel
