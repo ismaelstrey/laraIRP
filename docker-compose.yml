@@ -1,0 +1,83 @@
+####
+# ATENTION:
+# Replace all occurences of sandbox with your project's name
+####
+
+# v2 syntax
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  lara-RP-mysql-data:
+    driver: local
+
+  # Redis Data
+  lara-RP-redis-data:
+    driver: local
+
+services:
+  dev:
+    image: ambientum/node:8
+    container_name: lara-RP-vue-dev
+    command: npm run dev
+    volumes:
+      - .:/var/www/app
+    ports:
+      - 8080:8080
+
+  # Testing dist on a "real" webserver
+  production-server:
+    image: nginx:stable-alpine
+    container_name: lara-RP-preview-server
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - 9090:80
+
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: lara-RP-mysql
+    volumes:
+      - lara-RP-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=laraRp
+      - MYSQL_DATABASE=laraRp
+      - MYSQL_USER=laraRp
+      - MYSQL_PASSWORD=laraRp
+
+  # Redis
+  cache:
+    image: ambientum/redis:3.2
+    container_name: lara-RP-redis
+    command: --appendonly yes
+    volumes:
+      - lara-RP-redis-data:/data
+    ports:
+      - "6379:6379"
+
+  # PHP (with Caddy)
+  api:
+    image: ambientum/php:7.0-caddy
+    container_name: lara-RP-php
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:8080"
+    links:
+      - mysql
+      - cache
+
+  # Laravel Queues
+  queue:
+    image: ambientum/php:7.0
+    container_name: lara-RP-queue
+    command: php artisan queue:listen
+    volumes:
+      - .:/var/www/app
+    links:
+      - mysql
+      - cache
