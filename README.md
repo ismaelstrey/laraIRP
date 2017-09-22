@@ -27,8 +27,7 @@ Após rodar este comando descrito acima, crie um alias na sua máquina local
 > `curl https://github.com/codecasts/ambientum/raw/master/commands.git-bash -o ~/.ambientum_rc`
 > `source ~/.ambientum_rc`
 
-## Dúvidas
+### Dúvidas
+Para dúvidas acesse o [Github do Ambientum](https://github.com/codecasts/ambientum)
 
-https://github.com/codecasts/ambientum
-
-# Obs: Todos os participantes irão trabalhar no mesmo ambiente de desenvolvimento.
+## Obs: Todos os participantes irão trabalhar no mesmo ambiente de desenvolvimento.
