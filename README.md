@@ -23,7 +23,7 @@ Após rodar este comando descrito acima, crie um alias na sua máquina local
 > `curl -L https://github.com/codecasts/ambientum/raw/master/commands.bash -o ~/.ambientum_rc`
 > `source ~/.ambientum_rc`
 
-1. Windows:
+2. Windows:
 > `curl https://github.com/codecasts/ambientum/raw/master/commands.git-bash -o ~/.ambientum_rc`
 > `source ~/.ambientum_rc`
 
