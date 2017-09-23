@@ -14,18 +14,23 @@ Ambientum é uma image-collection para Docker mantida pelo Codecasts
 
 ### Comandos
 Para subir o docker no projeto basta rodar o seguinte comando abaixo:
-
-> `docker-compose up`
+> ```sh
+> docker-compose up
+> ```
 
 Após rodar este comando descrito acima, crie um alias na sua máquina local
 
 1. Linux:
-> `curl -L https://github.com/codecasts/ambientum/raw/master/commands.bash -o ~/.ambientum_rc`
-> `source ~/.ambientum_rc`
+> ```sh
+> curl -L https://github.com/codecasts/ambientum/raw/master/commands.bash -o ~/.ambientum_rc
+> source ~/.ambientum_rc
+> ```
 
 2. Windows:
-> `curl https://github.com/codecasts/ambientum/raw/master/commands.git-bash -o ~/.ambientum_rc`
-> `source ~/.ambientum_rc`
+> ```sh
+> curl https://github.com/codecasts/ambientum/raw/master/commands.git-bash -o ~/.ambientum_rc
+> source ~/.ambientum_rc
+> ```
 
 ### Dúvidas
 Para dúvidas acesse o [Github do Ambientum](https://github.com/codecasts/ambientum)
