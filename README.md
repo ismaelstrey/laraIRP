@@ -30,4 +30,5 @@ Após rodar este comando descrito acima, crie um alias na sua máquina local
 ### Dúvidas
 Para dúvidas acesse o [Github do Ambientum](https://github.com/codecasts/ambientum)
 
-## Obs: Todos os participantes irão trabalhar no mesmo ambiente de desenvolvimento.
+## Observações
+@all :loudspeaker: Todos os participantes irão trabalhar no mesmo ambiente de desenvolvimento.
